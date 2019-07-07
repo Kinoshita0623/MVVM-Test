@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" >
+    <data>
+        <variable name="itemViewModel" type="org.panta.mvvmtest2.ItemViewModel"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:onClick="@{()-> itemViewModel.clickListener()}"
+    >
+        <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@{itemViewModel.title}"
+                android:textSize="24sp"
+                android:id="@+id/title"
+        />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="@{itemViewModel.description}"
+                  android:textSize="18sp"
+                  android:layout_below="@+id/title"
+                  android:id="@+id/description"
+        />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@+id/description"
+                  android:text="@{itemViewModel.clickCounter}"
+        />
+
+
+    </RelativeLayout>
+</layout>
